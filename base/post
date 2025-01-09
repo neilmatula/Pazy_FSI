@@ -1,9 +1,0 @@
-module load aue/anaconda3
-echo "done loading"
-#source loadmod
-
-#tail -n +200 pazy.out >  data.dat
-tail -n +10 pazy.out >  data.dat
-echo "done tailing"
-
-python post.py
