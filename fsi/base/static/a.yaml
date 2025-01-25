@@ -11,11 +11,13 @@ exawind:
     - velocity
     - turbulent_ke
     - specific_dissipation_rate
+    - gamma_transition
     - pressure
   amr_cell_vars:
     - velocity
     - tke
     - sdr
+    - intermittency
   amr_node_vars:
     - p
     

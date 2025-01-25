@@ -38,7 +38,7 @@ turbulence.model = KOmegaSST
 TKE.source_terms = KwSSTSrc
 SDR.source_terms = SDRSrc
 
-incflo.physics = FreeStream
+incflo.physics = FreeStream Intermittency
 #SyntheticTurbulence
 
 FreeStream.velocity_type = ConstValue
@@ -68,8 +68,8 @@ tagging.static.type = CartBoxRefinement
 #"""""""""""""""""""""""""""""""""""""""#
 #              GEOMETRY                 #
 #.......................................#
-geometry.prob_lo        =   -3 -3 1.45  # Lo corner coordinates
-geometry.prob_hi        =   3 3 6.45  # Hi corner coordinates
+geometry.prob_lo        =   -1.5 -1.5 1.45  # Lo corner coordinates
+geometry.prob_hi        =   1.5 1.5 2.95  # Hi corner coordinates
 geometry.is_periodic    =   0   0   0   # Periodicity x y z (0/1)
 # Boundary conditions
 xlo.type = "mass_inflow"

@@ -11,7 +11,7 @@
 #SBATCH -N 4
 
 # Percent of cores for nalu
-ipercent=75
+ipercent=90
 
 
 

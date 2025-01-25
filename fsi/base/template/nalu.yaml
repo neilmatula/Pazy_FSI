@@ -81,10 +81,11 @@ realms:
 
   equation_systems:
     name: theEqSys
-    max_iterations: 5
+    max_iterations: 4
     decoupled_overset_solve: yes
 
     solver_system_specification:
+      gamma_transition: solve_scalar
       velocity: solve_mom
       turbulent_ke: solve_scalar
       specific_dissipation_rate: solve_scalar
@@ -114,6 +115,7 @@ realms:
       target_name:
         - air1-HEX
       value:
+        gamma_transition: 1.0
         pressure: 0.0
         velocity: [{windspeed}, 0.0, 0.0]
         turbulent_ke: {tkein}
@@ -223,6 +225,7 @@ realms:
   solution_options:
     name: myOptions
     turbulence_model: sst
+    transition_model: true
     #turbulence_model: laminar
     projected_timescale_type: momentum_diag_inv
 
@@ -231,16 +234,19 @@ realms:
         continuity: density_time_derivative
 
     - hybrid_factor:
+        gamma_transition: 1.0
         velocity: 1.0
         turbulent_ke: 1.0
         specific_dissipation_rate: 1.0
 
     - alpha_upw:
+        gamma_transition: 1.0
         velocity: 1.0
         turbulent_ke: 1.0
         specific_dissipation_rate: 1.0
 
     - upw_factor:
+        gamma_transition: 0.0
         velocity: 0.0
         turbulent_ke: 0.0
         specific_dissipation_rate: 0.0
@@ -255,6 +261,7 @@ realms:
         specific_dissipation_rate: yes
 
     - projected_nodal_gradient:
+        gamma_transition: element
         velocity: element
         pressure: element
         turbulent_ke: element
@@ -262,10 +269,16 @@ realms:
         ndtw: element
 
     - relaxation_factor:
+        gamma_transition: 0.7
         velocity: 0.7
         pressure: 0.3
         turbulent_ke: 0.7
         specific_dissipation_rate: 0.7
+
+    - turbulence_model_constants:
+        fsti: 0.5
+        sdr_amb: 0.0
+        tke_amb: 0.0
 
   post_processing:
   - type: surface

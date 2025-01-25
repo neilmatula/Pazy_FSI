@@ -21,7 +21,7 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
           0   CompIce         - Compute ice loads (switch) [0=None; 1=IceFloe; 2=IceDyn]
           0   MHK             - MHK turbine type (switch) [0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine]
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
-        0.0   Gravity         - Gravitational acceleration (m/s^2)
+       9.81   Gravity         - Gravitational acceleration (m/s^2)
   {density}   AirDens         - Air density (kg/m^3)
           0   WtrDens         - Water density (kg/m^3)
   1.8E-05   KinVisc         - Kinematic viscosity of working fluid (m^2/s)
@@ -67,7 +67,7 @@ False         CalcSteady      - Calculate a steady-state periodic operating poin
 False         LinOutJac       - Include full Jacobians in linearization output (for debug) (flag) [unused if Linearize=False; used only if LinInputs=LinOutputs=2]
 False         LinOutMod       - Write module-level linearization output files in addition to output for full system? (flag) [unused if Linearize=False]
 ---------------------- VISUALIZATION ------------------------------------------
-          1   WrVTK           - VTK visualization data output: (switch) [0=none; 1=initialization data only; 2=animation; 3=mode shapes]
+          2   WrVTK           - VTK visualization data output: (switch) [0=none; 1=initialization data only; 2=animation; 3=mode shapes]
           1   VTK_type        - Type of VTK visualization data: (switch) [1=surfaces; 2=basic meshes (lines/points); 3=all meshes (debug)] [unused if WrVTK=0]
 True         VTK_fields       - Write mesh fields to VTK data files? (flag) [true/false] [unused if WrVTK=0]
-         40.0   VTK_fps       - Frame rate for VTK output (frames per second)[will use closest integer multiple of DT] [used only if WrVTK=2 or WrVTK=3]
+         1000.0   VTK_fps       - Frame rate for VTK output (frames per second)[will use closest integer multiple of DT] [used only if WrVTK=2 or WrVTK=3]

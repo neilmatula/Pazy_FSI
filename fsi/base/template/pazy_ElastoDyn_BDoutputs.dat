@@ -68,7 +68,7 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   PtfmCMzt    - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
           0   PtfmRefzt   - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform reference point (meters)
 ---------------------- MASS AND INERTIA ----------------------------------------
-          0   TipMass(1)  - Tip-brake mass, blade 1 (kg)
+       10.0   TipMass(1)  - Tip-brake mass, blade 1 (kg)
           0   TipMass(2)  - Tip-brake mass, blade 2 (kg)
           0   TipMass(3)  - Tip-brake mass, blade 3 (kg) [unused for 2 blades]
       56780   HubMass     - Hub mass (kg)
